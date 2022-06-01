@@ -1,6 +1,6 @@
 # Whole Exome Sequencing workflow
 
-**Workflow Creator:** Dr. Konstantinos Kyritsis ([ORCHID](https://orcid.org/0000-0001-8035-341X))
+**Workflow Creator:** Dr. Konstantinos Kyritsis ([ORCID](https://orcid.org/0000-0001-8035-341X))
 
 ## Funding
 <p align="center">
