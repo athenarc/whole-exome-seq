@@ -4,7 +4,7 @@
 
 ## Funding
 <p align="center">
-  <img src="[https://raw.githubusercontent.com/athenarc/schema/master/web/img/schema-logo-03.png](https://genoptics.github.io/assets/img/logo.png)" width="400px"/>
+  <img src="https://genoptics.github.io/assets/img/logo.png" width="400px"/>
   <br />
 </p>
 
