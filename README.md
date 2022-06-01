@@ -6,3 +6,6 @@
 ![alt text](https://genoptics.github.io/assets/img/logo.png "GenOptics")
 
 This research has also been co-financed by the European Regional Development Fund of the European Union and Greek National Funds through the Operational Program Competitiveness, Entrepreneurship, and Innovation under the call RESEARCH – CREATE – INNOVATE (GenOptics, project code: T2EΔK-00407).
+
+## Test data
+[https://hypatia-comp.athenarc.gr/whole-exome-data.tar.gz](https://hypatia-comp.athenarc.gr/whole-exome-data.tar.gz)
