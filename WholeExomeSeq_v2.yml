@@ -1,0 +1,57 @@
+# ExpressionTools input for raw files:
+raw_files_directory:
+  class: Directory
+  path: ../data/temp_data
+
+# bwa mem inputs:
+bwa_mem_ref_genome:
+  class: File
+  path: ../data/ucsc_hg19_chr1_subset/hg19_chr1_subset.fa
+
+# bwa mem and SAMtools predefined number of threads:
+bwa_mem_num_threads: 4
+samtools_view_threads: 4
+samtools_fixmate_threads: 4
+samtools_sort_threads: 4
+samtools_flagstat_threads: 4
+
+# picard AddOrReplaceReadGroups inputs (picard-buildBam.cwl wrapper):
+# picard_addorreplacereadgroups_readGroups: true
+picard_addorreplacereadgroups_rglb: lib1
+picard_addorreplacereadgroups_rgpl: illumina
+
+# GATK HaplotypeCaller inputs (gatk-HaplotypeCaller.cwl wrapper):
+HaplotypeCaller_reference:
+  class: File
+  path: ../data/ucsc_hg19_chr1_subset/hg19_chr1_subset.fa 
+
+HaplotypeCaller_OUTPUT: output.gatk.vcf.gz
+
+# GATK VariantFiltration inputs (gatk-VariantFiltration.cwl wrapper):
+VariantFiltration_reference: 
+  class: File
+  path: ../data/ucsc_hg19_chr1_subset/hg19_chr1_subset.fa 
+
+# VariantFiltration_window: 0
+VariantFiltration_filter_name: [FS, QD]
+VariantFiltration_filter: ["FS > 60.0", "QD < 2.0"]
+
+VariantFiltration_OUTPUT: final_variantFiltration.vcf
+
+# GATK SelectVariants inputs (gatk-SelectVariants.cwl wrapper):
+SelectVariants_reference: 
+  class: File
+  path: ../data/ucsc_hg19_chr1_subset/hg19_chr1_subset.fa 
+
+SelectVariants_OUTPUT: final_selectVariants.vcf
+
+# ANNOVAR table_annovar.pl inputs (table-annovar.cwl wrapper):
+table_annovar_database_location:
+  class: Directory
+  path: ../data/humandb
+
+table_annovar_output_name: final_annovar
+
+table_annovar_protocol: refGene,knownGene,clinvar_20190305 
+table_annovar_operation: g,g,f 
+table_annovar_convert_arg: "-allsample -withfreq"
